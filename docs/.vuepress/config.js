@@ -4,10 +4,10 @@ module.exports = {
   base: "/learning-summary-vue-press/", // 设置站点根路径和github项目名称保持一致
   plugins: ['demo-container'], // 配置插件
   themeConfig: {
-    nav: [
+    navbar: [
       { text: "首页", link: "/" },
-      { text: "编程规范", link: "/nav/rule/index.md" },
-      { text: "Ajax跨域详解", link: "/nav/ajax/index.md" },
+      { text: "编程规范", link: "/nav/rule.md" },
+      { text: "Ajax跨域详解", link: "/nav/ajax.md" },
       {
         text: "关注工具",
         items: [
@@ -76,122 +76,115 @@ module.exports = {
       //   ],
       // },
       {
-        title: "项目",
-        collapsable: true,
+        text: "项目",
+        link: '/sideBar/',
         children: [
-          { title: "问题", path: "/sideBar/project/problem" },
-          { title: "工具", path: "/sideBar/project/until" },
-          // { title: "公共组件", path: "/sideBar/project/exportComponents/exportResourceSelect" },
-          { title: "插件", path: "/sideBar/project/public" },
-          { title: "指令", path: "/sideBar/project/directive" },
+          { text: "问题", link: "/sideBar/project/problem.md" },
+          { text: "工具", link: "/sideBar/project/until.md" },
+          // { text: "公共组件", link: "/sideBar/project/exportComponents/exportResourceSelect" },
+          { text: "插件", link: "/sideBar/project/public.md" },
+          { text: "指令", link: "/sideBar/project/directive.md" },
         ],
       },
       {
-        title: "常用命令",
-        collapsable: true,
+        text: "常用命令",
         children: [
-          { title: "git", path: "/sideBar/command/git" },
-          { title: "npm", path: "/sideBar/command/npm" },
-          { title: "linux", path: "/sideBar/command/linux" },
-          { title: "submodule", path: "/sideBar/command/submodule" },
-          { title: "markdown", path: "/sideBar/command/markdown" },
+          { text: "git", link: "/sideBar/command/git.md" },
+          { text: "npm", link: "/sideBar/command/npm.md" },
+          { text: "linux", link: "/sideBar/command/linux.md" },
+          { text: "submodule", link: "/sideBar/command/submodule.md" },
+          { text: "markdown", link: "/sideBar/command/markdown.md" },
         ],
       },
       {
-        title: "VSCODE",
-        collapsable: true,
+        text: "VSCODE",
         children: [
-          { title: "插件", path: "/sideBar/vscode/public" },
+          { text: "插件", link: "/sideBar/vscode/public.md" },
           {
-            title: "设置",
+            text: "设置",
             children: [
               {
-                title: "代码片段",
-                path: "/sideBar/vscode/setting/codeSnippet",
+                text: "代码片段",
+                link: "/sideBar/vscode/setting/codeSnippet.md",
               },
               {
-                title: "linux终端",
-                path: "/sideBar/vscode/setting/linuxTerminal",
+                text: "linux终端",
+                link: "/sideBar/vscode/setting/linuxTerminal.md",
               },
             ],
           },
         ],
       },
       {
-        title: "源码",
-        collapsable: true,
+        text: "源码",
         children: [
-          { title: "promise", path: "/sideBar/sourceCode/promise" },
-          { title: "axios", path: "/sideBar/sourceCode/axios" },
+          { text: "promise", link: "/sideBar/sourceCode/promise.md" },
+          { text: "axios", link: "/sideBar/sourceCode/axios.md" },
           {
-            title: "vue",
+            text: "vue",
             children: [
               {
-                title: "vue2",
-                path: "/sideBar/sourceCode/vue/vue2",
+                text: "vue2",
+                link: "/sideBar/sourceCode/vue/vue2.md",
               },
               {
-                title: "vue3",
-                path: "/sideBar/sourceCode/vue/vue3",
+                text: "vue3",
+                link: "/sideBar/sourceCode/vue/vue3.md",
               },
             ],
           },
         ],
       },
       {
-        title: "设计模式",
-        collapsable: true,
+        text: "设计模式",
         children: [
-          // { title: "promise", path: "/sideBar/sourceCode/promise" },
-          // { title: "axios", path: "/sideBar/sourceCode/axios" },
+          // { text: "promise", link: "/sideBar/sourceCode/promise" },
+          // { text: "axios", link: "/sideBar/sourceCode/axios" },
           // {
-          //   title: "vue",
+          //   text: "vue",
           //   children: [
           //     {
-          //       title: "vue2",
-          //       path: "/sideBar/sourceCode/vue/vue2",
+          //       text: "vue2",
+          //       link: "/sideBar/sourceCode/vue/vue2",
           //     },
           //     {
-          //       title: "vue3",
-          //       path: "/sideBar/sourceCode/vue/vue3",
+          //       text: "vue3",
+          //       link: "/sideBar/sourceCode/vue/vue3",
           //     },
           //   ],
           // },
         ],
       },
       {
-        title: "安装插件",
-        collapsable: true,
+        text: "安装插件",
         children: [
-          { title: "vuePress+gitPage", path: "/sideBar/npmPublic/vuePress" },
-          // { title: "axios", path: "/sideBar/sourceCode/axios" },
+          { text: "vuePress+gitPage", link: "/sideBar/npmPublic/vuePress.md" },
+          // { text: "axios", link: "/sideBar/sourceCode/axios" },
           // {
-          //   title: "vue",
+          //   text: "vue",
           //   children: [
           //     {
-          //       title: "vue2",
-          //       path: "/sideBar/sourceCode/vue/vue2",
+          //       text: "vue2",
+          //       link: "/sideBar/sourceCode/vue/vue2",
           //     },
           //     {
-          //       title: "vue3",
-          //       path: "/sideBar/sourceCode/vue/vue3",
+          //       text: "vue3",
+          //       link: "/sideBar/sourceCode/vue/vue3",
           //     },
           //   ],
           // },
         ],
       },
       {
-        title: "整理报错",
-        collapsable: true,
+        text: "整理报错",
         children: [
-          { title: "vuePress+gitPage", path: "/sideBar/npmPublic/vuePress" }
+          { text: "vuePress+gitPage", link: "/sideBar/npmPublic/vuePress.md" }
         ],
       },
       {
-        title: "性能优化",
-        collapsable: true,
+        text: "性能优化",
         children: [
-          { title: "vuePress+gitPage", path: "/sideBar/npmPublic/vuePress" }
+          { text: "vuePress+gitPage", link: "/sideBar/npmPublic/vuePress.md" }
         ],
       },
     ],
