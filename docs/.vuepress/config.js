@@ -6,13 +6,8 @@ module.exports = {
   themeConfig: {
     navbar: [
       { text: "首页", link: "/" },
-<<<<<<< HEAD
       { text: "编程规范", link: "/nav/rule/index.md" },
       { text: "Ajax跨域详解", link: "/nav/ajax/index.md" },
-=======
-      { text: "编程规范", link: "/nav/rule.md" },
-      { text: "Ajax跨域详解", link: "/nav/ajax.md" },
->>>>>>> e74e23e72e07e50aa684046f6e10e4c66aef6064
       {
         text: "关注工具",
         items: [
