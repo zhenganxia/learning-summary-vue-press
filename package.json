@@ -1,0 +1,30 @@
+{
+  "name": "learning-summary-vue-press",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs",
+    "deploy": "npm run build && bash deploy-gh.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhenganxia/learning-summary-vue-press.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhenganxia/learning-summary-vue-press/issues"
+  },
+  "homepage": "https://github.com/zhenganxia/learning-summary-vue-press#readme",
+  "devDependencies": {
+    "vuepress": "^1.8.2"
+  },
+  "dependencies": {
+    "async-validator": "^1.11.5",
+    "element-ui": "^2.15.6",
+    "vuepress-plugin-demo-container": "^0.2.0"
+  }
+}
