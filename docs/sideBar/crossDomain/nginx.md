@@ -1,4 +1,4 @@
-#### [文章地址](https://zhuanlan.zhihu.com/p/65393365)
+#### [引用文章地址](https://zhuanlan.zhihu.com/p/65393365)
 ### nginx在应用程序中的作用
 1.解决跨域<br/>
 2.请求过滤<br/>

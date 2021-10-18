@@ -133,6 +133,13 @@ module.exports = {
         ],
       },
       {
+        title: "兼容",
+        collapsable: true,
+        children: [
+          { title: "日常兼容",  path: "/sideBar/compatibility/js" }
+        ],
+      },
+      {
         title: "算法",
         collapsable: true,
         children: [
@@ -192,8 +199,8 @@ module.exports = {
         title: "JavaScript",
         collapsable: true,
         children: [
-          { title: "内置功能", path: "/sideBar/js/scope.md" },
-          { title: "展望未来", path: "" },
+          { title: "队列", path: "/sideBar/js/queueing.md" },
+          // { title: "展望未来", path: "" },
         ],
       },
       {

@@ -50,3 +50,7 @@ sortFn(arr)
 const result = sortArr.sort((a,b)=>a-b)
 console.log('result',result)
 ```
+```js
+const sortArr1 = Array.from(new Set(arr.flat(Infinity))).sort((a,b)=>{ return a-b})
+console.log('sortArr1',sortArr1)
+```
