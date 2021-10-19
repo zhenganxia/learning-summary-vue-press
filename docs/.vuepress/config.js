@@ -4,82 +4,59 @@ module.exports = {
   base: "/learning-summary-vue-press/", // 设置站点根路径和github项目名称保持一致
   plugins: ['demo-container'], // 配置插件
   themeConfig: {
-    navbar: [
-      { title: "首页", path: "/" },
-      { title: "编程规范", path: "/nav/rule/index.md" },
-      // {
-      //   title: "微前端",
-      //   items: [
-      //     { title: "single-spa", link: "https://single-spa.js.org/docs/getting-started-overview" },
-      //     { title: "qiankun", link: "https://qiankun.umijs.org/zh/guide" },
-      //     { title: "webpack模块联邦", link: "https://webpack.docschina.org/concepts/module-federation/" }
-      //   ],
-      // },
-      // {
-      //   text: "关注工具",
-      //   items: [
-      //     {
-      //       text: "UI框架",
-      //       items: [
-      //         { text: "Element", link: "https://element.eleme.cn/#/zh-CN/component/installation" },
-      //         { text: "Ant Design Vue", link: "https://2x.antdv.com/components/overview-cn/" },
-      //       ],
-      //     },
-      //     {
-      //       text: "JS",
-      //       items: [
-      //         { text: "ES6", link: "https://es6.ruanyifeng.com/" },
-      //         { text: "ES2020", link: "https://www.cnblogs.com/mengfangui/p/13885589.html/" },
-      //         { text: "TS", link: "https://typescript.bootcss.com/" },
-      //       ],
-      //     },
-      //     {
-      //       text: "微前端",
-      //       items: [
-      //         { text: "single-spa", link: "https://single-spa.js.org/docs/getting-started-overview" },
-      //         { text: "qiankun", link: "https://qiankun.umijs.org/zh/guide" },
-      //         { text: "webpack模块联邦", link: "https://webpack.docschina.org/concepts/module-federation/" },
-      //       ],
-      //     },
-      //     {
-      //       text: "构建工具",
-      //       items: [
-      //         { text: "Webpack", link: "https://webpack.docschina.org/concepts/" },
-      //         { text: "Webpack-模块联邦", link: "https://webpack.docschina.org/concepts/module-federation/" },
-      //         { text: "Vite", link: "https://cn.vitejs.dev/guide/" },
-      //       ],
-      //     },
-      //     {
-      //       text: "日常工具",
-      //       items: [
-      //         { text: "Json在线解析", link: "https://www.json.cn/" },
-      //         { text: "Can i use", link: "https://caniuse.com/?search=flex-start/" },
-      //         { text: "MDN", link: "https://developer.mozilla.org/zh-CN/docs/Web/CSS/justify-content/" },
-      //       ],
-      //     },
-      //     {
-      //       text: "适配",
-      //       items: [
-      //         { text: "postcss-pxtorem", link: "https://www.npmjs.com/package/postcss-pxtorem/" },
-      //         { text: "postcss-px2rem", link: "https://www.npmjs.com/package/postcss-px2rem/" },
-      //         { text: "postcss-plugin-px2rem", link: "https://www.npmjs.com/package/postcss-plugin-px2rem/"},
-      //       ],
-      //     },
-      //   ],
-      // },
-      // {
-      //   text: "关注博客",
-      //   items: [
-      //     // {
-      //     //   text: "日常工具",
-      //     //   items: [
-      //     //     { text: "Json在线解析", link: "https://www.json.cn/" },
-      //     //     { text: "Can i use", link: "https://caniuse.com/?search=flex-start" },
-      //     //     { text: "MDN", link: "https://developer.mozilla.org/zh-CN/docs/Web/CSS/justify-content" },
-      //     //   ],
-      //     // }
-      //   ],
-      // },
+    nav: [
+      {
+        text: "日常工具",
+        items: [
+          { text: "Json在线解析", link: "https://www.json.cn/" },
+          { text: "Can i use", link: "https://caniuse.com/?search=flex-start/" },
+          { text: "MDN", link: "https://developer.mozilla.org/zh-CN/docs/Web/CSS/justify-content/" },
+        ],
+      },
+      {
+        text: "微前端",
+        items: [
+          { text: "single-spa", link: "https://single-spa.js.org/docs/getting-started-overview" },
+          { text: "qiankun", link: "https://qiankun.umijs.org/zh/guide" },
+          { text: "webpack模块联邦", link: "https://webpack.docschina.org/concepts/module-federation/" }
+        ],
+      },
+      {
+        text: "关注",
+        items: [
+          {
+            text: "UI框架",
+            items: [
+              { text: "Element", link: "https://element.eleme.cn/#/zh-CN/component/installation" },
+              { text: "Ant Design Vue", link: "https://2x.antdv.com/components/overview-cn/" },
+            ],
+          },
+          {
+            text: "JS",
+            items: [
+              { text: "ES6", link: "https://es6.ruanyifeng.com/" },
+              { text: "ES2020", link: "https://www.cnblogs.com/mengfangui/p/13885589.html/" },
+              { text: "TS", link: "https://typescript.bootcss.com/" },
+            ],
+          },
+          {
+            text: "构建工具",
+            items: [
+              { text: "Webpack", link: "https://webpack.docschina.org/concepts/" },
+              { text: "Webpack-模块联邦", link: "https://webpack.docschina.org/concepts/module-federation/" },
+              { text: "Vite", link: "https://cn.vitejs.dev/guide/" },
+            ],
+          },
+          {
+            text: "适配",
+            items: [
+              { text: "postcss-pxtorem", link: "https://www.npmjs.com/package/postcss-pxtorem/" },
+              { text: "postcss-px2rem", link: "https://www.npmjs.com/package/postcss-px2rem/" },
+              { text: "postcss-plugin-px2rem", link: "https://www.npmjs.com/package/postcss-plugin-px2rem/"},
+            ],
+          },
+        ],
+      }
     ],
     sidebar: [
       {
@@ -135,9 +112,7 @@ module.exports = {
       {
         title: "兼容",
         collapsable: true,
-        children: [
-          { title: "日常兼容",  path: "/sideBar/compatibility/js" }
-        ],
+        path: "/sideBar/compatibility/js"
       },
       {
         title: "算法",
@@ -145,6 +120,14 @@ module.exports = {
         children: [
           { title: "排序", path: "/sideBar/algorithm/sort" },
           { title: "其他", path: "/sideBar/algorithm/others" }
+        ],
+      },
+      {
+        title: "node",
+        collapsable: true,
+        children: [
+          { title: "node", path: "/sideBar/node/node" },
+          { title: "服务端", path: "/sideBar/node/server" }
         ],
       },
       {

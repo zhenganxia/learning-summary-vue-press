@@ -5,9 +5,9 @@ JavaScript 是单线程语言。在浏览器中，当JS代码被加载时，浏�
 
 主线程从任务队列中读取任务是不断循环的，每当栈被清空后，主线程就会从任务队列中读取新的任务并执行，如果没有新的任务，就会一直等待，直到有新的任务。JavaScript 的这种执行机制就叫做任务循环。因为每个任务都由一个事件所触发，所以也叫 “事件循环”。
 
-### 宏队列：包括整体代码script，setTimeout，setInterval,I/O,UI rendering
+### 宏队列：包括整体代码script，setTimeout，setInterval,I/O(文件读写、数据库读写),UI rendering
 
-### 微队列：Promise.then(非new Promise)，await(),process.nextTick(node中),Object.observe, MutationObserver
+### 微队列：Promise.then(非new Promise),process.nextTick(node中),await,Object.observe, MutationObserver
 
 #### 宏队列和微队列的执行顺序
 先执行同步代码，遇到异步宏任务则将异步宏任务放入宏任务队列中，遇到异步微任务则将异步微任务放入微任务队列中，当所有同步代码执行完毕后，再将异步微任务从队列中调入主线程执行，微任务执行完毕后再将异步宏任务从队列中调入主线程执行，一直循环直至所有任务执行完毕。
