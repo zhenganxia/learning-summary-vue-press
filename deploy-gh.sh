@@ -17,6 +17,6 @@ git add -A
 git commit -m 'deploy'
 
 # 把上面的 <USERNAME> 换成你自己的 Github 用户名，<REPO> 换成仓库名，比如我这里就是：这里是本项目打包后存储的仓库地址
-git push -f git@github.com:zhenganxia/summary-vue-press-page.git master
+git push -f git@github.com:zhenganxia/summary-vue-press-page.git master:gh-pages
 
 cd -
