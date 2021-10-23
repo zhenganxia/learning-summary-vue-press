@@ -7779,6 +7779,11 @@ vuepress-html-webpack-plugin@^3.2.0:
     toposort "^1.0.0"
     util.promisify "1.0.0"
 
+vuepress-plugin-cat@1.0.3:
+  version "1.0.3"
+  resolved "https://registry.npmmirror.com/vuepress-plugin-cat/download/vuepress-plugin-cat-1.0.3.tgz#efbac43981ae4dee55c8726b347b7ba272052654"
+  integrity sha1-77rEOYGuTe5VyHJrNHt7onIFJlQ=
+
 vuepress-plugin-container@^2.0.2:
   version "2.1.5"
   resolved "https://registry.nlark.com/vuepress-plugin-container/download/vuepress-plugin-container-2.1.5.tgz#37fff05662fedbd63ffd3a5463b2592c7a7f3133"
