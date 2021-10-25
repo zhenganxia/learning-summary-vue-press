@@ -3,10 +3,7 @@
 VuePress 需要 Node.js (opens new window)>= 8.6
 :::
 ### 安装vuePress
-1.创建并进入一个新目录
-```js
-mkdir vuepress-starter && cd vuepress-starter
-```
+1.gitHub创建一个新的仓库 仓库名,clone到本地<br/>
 2.初始化项目
 ```js
 yarn init # npm init
@@ -97,15 +94,14 @@ themeConfig:{
     ]
 }
 ```
+9.项目中设置.gitignore 忽略 node_modules/ docs/.vuepress/dist
+
 ### 配置gitPage有两种方法：
 #### 方法一：开发内容（master）和压缩文件放一个项目不同分支（gh-page），本项目使用的是方法一
 :::tip
 注意主项目default要在master上，否则代码拉下来是压缩文件内容
 :::
-1.gitHub创建一个新的仓库 learning-summary-vue-press<br/>
-2.git clone 到本地<br/>
-3.项目中设置.gitignore 忽略 node_modules/ docs/.vuepress/dist<br/>
-4.创建deploy-gh.sh<br/>
++ 创建deploy-gh.sh<br/>
 ```js
 确保脚本抛出遇到的错误
 set -e
@@ -124,29 +120,25 @@ git add -A
 git commit -m 'deploy'
 
 把上面的 <USERNAME> 换成你自己的 Github 用户名，<REPO> 换成仓库名，比如我这里就是：
-git push -f git@github.com:zhenganxia/learning-summary-vue-press.git master:gh-page
+git push -f git@github.com:zhenganxia/仓库名.git master:gh-page
 
 cd -
 ```
-5.修改config.js
+1.修改config.js
 ```js
-base: "/learning-summary-vue-press/", // 设置站点根路径和github项目名称保持一致
+base: "/仓库名/", // 设置站点根路径和github项目名称保持一致
 注意不要设置dest（会导致build生成文件路径不在docs中，默认是在docs中生成）
 ```
-6.修改package.json-scripts
+2.修改package.json-scripts
 ```js
 "deploy": "npm run build（yarn build） && bash deploy-gh.sh"
 ```
-7.执行成功-查看git上项目setting-pages查看关联情况，手动关联成功分支-通过生成地址可以直接访问vuePress项目了
+3.执行成功-查看git上项目setting-pages查看关联情况，手动关联成功分支-通过生成地址可以直接访问vuePress项目了
 注意：如果没有数据查看source对应的分支是否对
 <img :src="$withBase('/images/gitPage.png')" alt="foo">
 
-#### 方法二：两个仓库一个仓库放开发内容（vuepress-snow），一个仓库放压缩文件（vuepress-snow-page）
-
-1.创建新的仓库：vuepress-snow，vuepress-snow-page<br/>
-2.git clone vuepress-snow 到本地<br/>
-3.项目中设置.gitignore 忽略 node_modules/ docs/.vuepress/dist<br/>
-4.创建deploy-gh.sh<br/>
+#### 方法二：两个仓库一个仓库放开发内容（同上，deploy-gh.sh/pack.json/config需要修改），一个仓库放压缩文件
+1.创建deploy-gh.sh<br/>
 ```js
 确保脚本抛出遇到的错误
 set -e
@@ -165,22 +157,22 @@ git add -A
 git commit -m 'deploy'
 
 这里是两个仓库部署，所以这里放的压缩文件项目地址
-git push -f git@github.com:zhenganxia/vuepress-snow-page.git master
+git push -f git@github.com:zhenganxia/存放压缩文件仓库名.git master
 
 cd -
 ```
 
-5.修改config.js
+2.修改config.js
 ```js
-base: "/vuepress-snow-page/", // 设置站点根路径和github压缩文件项目名称保持一致
+base: "/存放压缩文件仓库名/", // 设置站点根路径和github压缩文件项目名称保持一致
 注意不要设置dest（会导致build生成文件路径不在docs中，默认是在docs中生成）
 ```
-6.修改package.json-scripts
+3.修改package.json-scripts
 ```js
 "deploy": "npm run build（yarn build） && bash deploy-gh.sh"
 ```
-7.执行成功-查看git上项目setting-pages查看关联情况，需要手动关联成功分支-通过生成地址可以直接访问vuePress项目了
-注意：如果没有数据查看source对应的分支是否对（）
-<img :src="$withBase('/images/gitPage.png')" alt="foo">
+4.执行成功-查看git上项目setting-pages查看关联情况，需要手动关联成功分支-通过生成地址可以直接访问vuePress项目了
+注意：如果没有数据查看source对应的分支是否对
+
 
 ### [博客搭建element](https://www.jianshu.com/p/93c532cdf951)

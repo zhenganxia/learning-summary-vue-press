@@ -53,7 +53,10 @@ git branch -D 要删除分支名
 ```
 git push -u origin --delete 分支名
 ```
-
+### 删除文件
+```
+rm -rf  文件名(node_modules/)
+```
 ### 查看远程分支状态
 ```
 git remote show origin
