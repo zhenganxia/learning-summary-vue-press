@@ -140,6 +140,8 @@ base: "/learning-summary-vue-press/", // 设置站点根路径和github项目名
 7.执行成功-查看git上项目setting-pages查看关联情况，手动关联成功分支-通过生成地址可以直接访问vuePress项目了
 注意：如果没有数据查看source对应的分支是否对
 ![avatar](/images/gitPage.png)
+![avatar](images/gitPage.png)
+![avatar](/gitPage.png)
 
 #### 方法二：两个仓库一个仓库放开发内容（vuepress-snow），一个仓库放压缩文件（vuepress-snow-page）
 
