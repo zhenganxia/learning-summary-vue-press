@@ -172,7 +172,7 @@ module.exports = {
         ],
       },
       {
-        title: "安装插件",
+        title: "搭建",
         collapsable: true,
         children: [
           { title: "vuePress+gitPage", path: "/sideBar/npmPublic/vuePress" }

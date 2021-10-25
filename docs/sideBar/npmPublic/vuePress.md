@@ -97,105 +97,89 @@ themeConfig:{
     ]
 }
 ```
-### 配置gitPage
+### 配置gitPage有两种方法：
+#### 方法一：开发内容（master）和压缩文件放一个项目不同分支（gh-page），本项目使用的是方法一
+:::tip
+注意主项目default要在master上，否则代码拉下来是压缩文件内容
+:::
 1.gitHub创建一个新的仓库 learning-summary-vue-press
 2.git clone 到本地
-3.将创建的vuePress项目内容放到clone下来仓库中
-4.项目中设置.gitignore 忽略 node_modules/ docs/.vuepress/dist
-5.创建deploy-gh.sh
+3.项目中设置.gitignore 忽略 node_modules/ docs/.vuepress/dist
+4.创建deploy-gh.sh
 ```js
-#!/usr/bin/env sh
-
-# 确保脚本抛出遇到的错误
+确保脚本抛出遇到的错误
 set -e
 
-# 生成静态文件
+生成静态文件
 npm run build
 
-# 进入生成的文件夹
+进入生成的文件夹
 cd docs/.vuepress/dist
 
-# 如果是发布到自定义域名
-# echo 'www.example.com' > CNAME
+如果是发布到自定义域名
+echo 'www.example.com' > CNAME
 
 git init
 git add -A
 git commit -m 'deploy'
 
-# 把上面的 <USERNAME> 换成你自己的 Github 用户名，<REPO> 换成仓库名，比如我这里就是：
-git push -f git@github.com:zhenganxia/learning-summary-vue-press.git master:gh-pages
+把上面的 <USERNAME> 换成你自己的 Github 用户名，<REPO> 换成仓库名，比如我这里就是：
+git push -f git@github.com:zhenganxia/learning-summary-vue-press.git master:gh-page
 
 cd -
 ```
-6.修改config.js
+5.修改config.js
 ```js
 base: "/learning-summary-vue-press/", // 设置站点根路径和github项目名称保持一致
 注意不要设置dest（会导致build生成文件路径不在docs中，默认是在docs中生成）
 ```
-7.修改package.json-scripts
+6.修改package.json-scripts
 ```js
-"deploy": "npm run build && bash deploy-gh.sh"
+"deploy": "npm run build（yarn build） && bash deploy-gh.sh"
 ```
-8.执行成功-查看git上项目setting-pages查看关联情况，关联成功-通过生成地址可以直接访问vuePress项目了
+7.执行成功-查看git上项目setting-pages查看关联情况，手动关联成功分支-通过生成地址可以直接访问vuePress项目了
 注意：如果没有数据查看source对应的分支是否对
 ![avatar](/images/gitPage.png)
-<!-- <img :src="$withBase('/images/gitPage.png')" alt="gitPage"> -->
 
+#### 方法二：两个仓库一个仓库放开发内容（vuepress-snow），一个仓库放压缩文件（vuepress-snow-page）
+
+1.创建新的仓库：vuepress-snow，vuepress-snow-page
+2.git clone vuepress-snow 到本地
+3.项目中设置.gitignore 忽略 node_modules/ docs/.vuepress/dist
+4.创建deploy-gh.sh
+```js
+确保脚本抛出遇到的错误
+set -e
+
+生成静态文件
+npm run build
+
+进入生成的文件夹
+cd docs/.vuepress/dist
+
+如果是发布到自定义域名
+echo 'www.example.com' > CNAME
+
+git init
+git add -A
+git commit -m 'deploy'
+
+这里是两个仓库部署，所以这里放的压缩文件项目地址
+git push -f git@github.com:zhenganxia/vuepress-snow-page.git master
+
+cd -
+```
+
+5.修改config.js
+```js
+base: "/vuepress-snow-page/", // 设置站点根路径和github压缩文件项目名称保持一致
+注意不要设置dest（会导致build生成文件路径不在docs中，默认是在docs中生成）
+```
+6.修改package.json-scripts
+```js
+"deploy": "npm run build（yarn build） && bash deploy-gh.sh"
+```
+7.执行成功-查看git上项目setting-pages查看关联情况，需要手动关联成功分支-通过生成地址可以直接访问vuePress项目了
+注意：如果没有数据查看source对应的分支是否对（）
+![avatar](/images/gitPage.png)
 ### [博客搭建element](https://www.jianshu.com/p/93c532cdf951)
-1.安装Demo插件
-```js
-npm install vuepress-plugin-demo-container
-```
-2.然后在/docs/.vuepress/config.js文件中配置上该插件
-```js
-module.exports = {
-  // ...
-  plugins: ['demo-container'], // 配置插件
-  markdown: {}
-}
-```
-3.enhanceApp.js
-```js
-import ElementUI from 'element-ui';
-import 'element-ui/lib/theme-chalk/index.css';
-
-export default async ({
-  Vue
-}) => {
-  if (typeof process === 'undefined') {
-    Vue.use(ElementUI)
-  }
-}
-```
-4.使用element+vuepress-plugin-demo-container插件
-```markdown
-::: demo
-```html
-<template>
-  <el-select v-model="value" placeholder="请选择">
-    <el-option
-      v-for="item in options"
-      :key="item.value"
-      :label="item.label"
-      :value="item.value">
-    </el-option>
-  </el-select>
-</template>
-
-<script>
-  export default {
-    data() {
-      return {
-        options: [{
-          value: '选项1',
-          label: '黄金糕'
-        }, {
-          value: '选项2',
-          label: '双皮奶'
-        }],
-        value: ''
-      }
-    }
-  }
-</script>
-```
