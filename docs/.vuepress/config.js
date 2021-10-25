@@ -1,7 +1,7 @@
 module.exports = {
   title: "峖小虾技术网站",
   description: "",
-  base: "/learning-summary-vue-press/", // 设置站点根路径和github项目名称保持一致
+  base: "./", // 设置站点根路径和github项目名称保持一致
   plugins: ['demo-container','vuepress-plugin-cat'], // 配置插件
   themeConfig: {
     nav: [
