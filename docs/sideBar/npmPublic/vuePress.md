@@ -43,7 +43,7 @@ touch config.js // 配置文件
 touch enhanceApp.js //  客户端应用的增强(vue插件引用)
 mkdir components // 全局组件
 ```
-6.一级和多级导航栏
+7.一级和多级导航栏
 >.vuepress\
 > nav
 
@@ -77,7 +77,7 @@ themeConfig:{
 }
 
 ```
-7.一级和多级侧边栏设置
+8.一级和多级侧边栏设置
 >.vuepress\
 >sideBar
 >>command
@@ -143,10 +143,10 @@ base: "/learning-summary-vue-press/", // 设置站点根路径和github项目名
 
 #### 方法二：两个仓库一个仓库放开发内容（vuepress-snow），一个仓库放压缩文件（vuepress-snow-page）
 
-1.创建新的仓库：vuepress-snow，vuepress-snow-page
-2.git clone vuepress-snow 到本地
-3.项目中设置.gitignore 忽略 node_modules/ docs/.vuepress/dist
-4.创建deploy-gh.sh
+1.创建新的仓库：vuepress-snow，vuepress-snow-page<br/>
+2.git clone vuepress-snow 到本地<br/>
+3.项目中设置.gitignore 忽略 node_modules/ docs/.vuepress/dist<br/>
+4.创建deploy-gh.sh<br/>
 ```js
 确保脚本抛出遇到的错误
 set -e
