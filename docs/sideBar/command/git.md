@@ -55,13 +55,19 @@ git push -u origin --delete 分支名
 ```
 
 ### 查看远程分支状态
+```
 git remote show origin
+```
 
 ### 更新远程分支和本地分支保持一致（本地、远程分支都删除，使用git branch -a 依然有远程分支）
+```
 git remote prune  origin
+```
 
 ### 分支强制合并（将modify分支内容强制合并到master）
+```
 git push origin modify:master --force
+```
 ### 同步本地远程分支：（远程删除分支，本地依然有）
 ```
 git remote prune origin
