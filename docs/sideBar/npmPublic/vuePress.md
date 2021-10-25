@@ -3,7 +3,7 @@
 VuePress 需要 Node.js (opens new window)>= 8.6
 :::
 ### 安装vuePress
-1.gitHub创建一个新的仓库 仓库名,clone到本地<br/>
+1.gitHub创建一个新的仓库,clone到本地<br/>
 2.初始化项目
 ```js
 yarn init # npm init

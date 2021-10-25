@@ -183,7 +183,8 @@ module.exports = {
         collapsable: true,
         children: [
           { title: "队列", path: "/sideBar/js/queueing.md" },
-          // { title: "展望未来", path: "" },
+          { title: "js", path: "/sideBar/js/js/js.md" },
+          // { title: "es6", path: "/sideBar/js/es6" },
         ],
       },
       {
@@ -192,7 +193,6 @@ module.exports = {
         children: [
           { title: "问题", path: "/sideBar/project/problem" },
           { title: "工具", path: "/sideBar/project/until" },
-          // { title: "公共组件", path: "/sideBar/project/exportComponents/exportResourceSelect" },
           { title: "插件", path: "/sideBar/project/public" },
           { title: "指令", path: "/sideBar/project/directive" },
         ],
