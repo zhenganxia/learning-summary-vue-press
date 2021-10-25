@@ -8,9 +8,11 @@
 
 比较类排序：通过比较来决定元素间的相对次序，由于其时间复杂度不能突破O(nlogn)，因此也称为非线性时间比较类排序。
 非比较类排序：不通过比较来决定元素间的相对次序，它可以突破基于比较排序的时间下界，以线性时间运行，因此也称为线性时间非比较类排序。
-![avatar](/images/sort/sort.png)
+<img :src="$withBase('/images/sort/sort.png')" alt="foo">
+
 #### 0.2 算法复杂度
-![avatar](/images/sort/kong.png)
+<img :src="$withBase('/images/sort/kong.png')" alt="foo">
+
 #### 0.3 相关概念
 
 稳定：如果a原本在b前面，而a=b，排序之后a仍然在b的前面。
@@ -28,7 +30,8 @@
 针对所有的元素重复以上的步骤，除了最后一个；
 重复步骤1~3，直到排序完成。
 #### 1.2 动图演示
-![avatar](/images/sort/bubbleSort.gif)
+<img :src="$withBase('/images/sort/bubbleSort.gif')" alt="foo">
+
 #### 1.3 代码实现
 ```js
 function bubbleSort(arr) {
@@ -55,7 +58,8 @@ function bubbleSort(arr) {
 重新排序数列，所有元素比基准值小的摆放在基准前面，所有元素比基准值大的摆在基准的后面（相同的数可以到任一边）。在这个分区退出之后，该基准就处于数列的中间位置。这个称为分区（partition）操作；
 递归地（recursive）把小于基准值元素的子数列和大于基准值元素的子数列排序。
 #### 2.2 动图演示
-![avatar](/images/sort/quickSort.gif)
+<img :src="$withBase('/images/sort/quickSort.gif')" alt="foo">
+
 #### 2.3 代码实现
 ```js
 function quickSort(arr, left, right) {

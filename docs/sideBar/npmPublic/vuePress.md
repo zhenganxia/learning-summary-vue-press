@@ -102,10 +102,10 @@ themeConfig:{
 :::tip
 注意主项目default要在master上，否则代码拉下来是压缩文件内容
 :::
-1.gitHub创建一个新的仓库 learning-summary-vue-press
-2.git clone 到本地
-3.项目中设置.gitignore 忽略 node_modules/ docs/.vuepress/dist
-4.创建deploy-gh.sh
+1.gitHub创建一个新的仓库 learning-summary-vue-press<br/>
+2.git clone 到本地<br/>
+3.项目中设置.gitignore 忽略 node_modules/ docs/.vuepress/dist<br/>
+4.创建deploy-gh.sh<br/>
 ```js
 确保脚本抛出遇到的错误
 set -e
@@ -139,8 +139,7 @@ base: "/learning-summary-vue-press/", // 设置站点根路径和github项目名
 ```
 7.执行成功-查看git上项目setting-pages查看关联情况，手动关联成功分支-通过生成地址可以直接访问vuePress项目了
 注意：如果没有数据查看source对应的分支是否对
-![avatar](/images/gitPage.png)
-![avatar](./images/gitPage.png)
+<img :src="$withBase('/images/gitPage.png')" alt="foo">
 
 #### 方法二：两个仓库一个仓库放开发内容（vuepress-snow），一个仓库放压缩文件（vuepress-snow-page）
 
@@ -182,5 +181,6 @@ base: "/vuepress-snow-page/", // 设置站点根路径和github压缩文件项�
 ```
 7.执行成功-查看git上项目setting-pages查看关联情况，需要手动关联成功分支-通过生成地址可以直接访问vuePress项目了
 注意：如果没有数据查看source对应的分支是否对（）
-![avatar](/images/gitPage.png)
+<img :src="$withBase('/images/gitPage.png')" alt="foo">
+
 ### [博客搭建element](https://www.jianshu.com/p/93c532cdf951)

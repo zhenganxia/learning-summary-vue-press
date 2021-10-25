@@ -47,8 +47,8 @@ vue-virtual-scroller这个组件，进行优化无限列表
 把productionSourceMap设置为false，不然最终打包过后会生成一些map文件，如果不关掉，生成环境是可以通过map去查看源码的，并且可以开启gzip压缩，使打包过后体积变小。
 #### 2、使用cdn的方式外部加载一些资源
 比如vue-router、axios等Vue的周边插件-在webpack.config.js里面，externals里面设置一些不必要打包的外部引用模块。然后在入门文件index.html里面通过cdn的方式去引入需要的插件。
-![avatar](/images/webpackExtral1.png)
-![avatar](/images/webpackExtral2.png)
+<img :src="$withBase('/images/webpackExtral1.png')" alt="foo">
+<img :src="$withBase('/images/webpackExtral2.png')" alt="foo">
 #### 3、减少图片使用，因为对于网页来说，图片会占用很大一部分体积，所以，优化图片的操作可以有效的来加快加载速度。
 可以用一些css3的效果来代替图片效果，或者使用雪碧图来减少图片的体积
 小于10000的图片转为base46

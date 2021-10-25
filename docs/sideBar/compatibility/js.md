@@ -1,6 +1,6 @@
 ### 浏览器内核
-<!-- ![avatar](/images/browser.png) -->
-![avatar](/images/browser.png)
+<img :src="$withBase('/images/browser.png')" alt="foo">
+
 #### es6部分新对象、表达式，语法不支持
 解决：使用bebel-polyfill-将es6的API解析为低版本
 ```js

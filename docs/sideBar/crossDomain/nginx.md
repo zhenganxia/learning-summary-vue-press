@@ -17,7 +17,8 @@ nginx现在几乎是众多大型网站的必用技术，大多数情况下，我
 ### 正向代理与反向代理
 代理是在服务器和客户端之间假设的一层服务器，代理将接收客户端的请求并将它转发给服务器，然后将服务端的响应转发给客户端。
 不管是正向代理还是反向代理，实现的都是上面的功能。
-![avatar](/images/nginx/zhengNginx.png)
+<img :src="$withBase('/images/nginx/zhengNginx.png')" alt="foo">
+
 #### 正向代理
 :::tip
 正向代理，意思是一个位于客户端和原始服务器(origin server)之间的服务器，为了从原始服务器取得内容，客户端向代理发送一个请求并指定目标(原始服务器)，然后代理向原始服务器转交请求并将获得的内容返回给客户端
@@ -37,7 +38,8 @@ nginx现在几乎是众多大型网站的必用技术，大多数情况下，我
 
 ### 基本配置
 ### 配置结构
-![avatar](/images/nginx/nginx.png)
+<img :src="$withBase('/images/nginx/nginx.png')" alt="foo">
+
 下面是一个nginx配置文件的基本结构：
 ```js
 events { 
@@ -83,7 +85,8 @@ upstream：配置后端服务器具体地址，负载均衡配置不可或缺的
 同源策略限制了从同一个源加载的文档或脚本如何与来自另一个源的资源进行交互。这是一个用于隔离潜在恶意文件的重要安全机制。通常不允许不同源间的读操作。
 #### 同源的定义
 如果两个页面的协议，端口（如果有指定）和域名都相同，则两个页面具有相同的源。
-![avatar](/images/nginx/cors.png)
+<img :src="$withBase('/images/nginx/cors.png')" alt="foo">
+
 #### nginx解决跨域的原理
 例如：
 
@@ -103,7 +106,8 @@ server {
 ```
 这样可以完美绕过浏览器的同源策略：fe.server.com访问nginx的fe.server.com属于同源访问，而nginx对服务端转发的请求不会触发浏览器的同源策略。
 #### 请求过滤
-![avatar](/images/nginx/404.png)
+<img :src="$withBase('/images/nginx/404.png')" alt="foo">
+
 根据状态码过滤
 ```js
 error_page 500 501 502 503 504 506 /50x.html;
@@ -125,15 +129,19 @@ if ( $request_method !~ ^(GET|POST|HEAD)$ ) {
     }
 ```
 #### 配置gzip
-![avatar](/images/nginx/gzip.png)
+<img :src="$withBase('/images/nginx/gzip.png')" alt="foo">
+
+
 GZIP是规定的三种标准HTTP压缩格式之一。目前绝大多数的网站都在使用GZIP传输 HTML、CSS、JavaScript 等资源文件。
 
 对于文本文件，GZip 的效果非常明显，开启后传输所需流量大约会降至 1/4 ~ 1/3。
 
 并不是每个浏览器都支持gzip的，如何知道客户端是否支持gzip呢，请求头中的Accept-Encoding来标识对压缩的支持。
-![avatar](/images/nginx/gzip1.png)
+<img :src="$withBase('/images/nginx/gzip1.png')" alt="foo">
+
 启用gzip同时需要客户端和服务端的支持，如果客户端支持gzip的解析，那么只要服务端能够返回gzip的文件就可以启用gzip了,我们可以通过nginx的配置来让服务端支持gzip。下面的respone中content-encoding:gzip，指服务端开启了gzip的压缩方式。
-![avatar](/images/nginx/gzip2.png)
+<img :src="$withBase('/images/nginx/gzip2.png')" alt="foo">
+
 ```js
 gzip                    on;
     gzip_http_version       1.1;        
@@ -153,8 +161,8 @@ gzip                    on;
 HTTP 运行在TCP 连接之上，自然也有着跟TCP 一样的三次握手、慢启动等特性。
 
 启用持久连接情况下，服务器发出响应后让TCP连接继续打开着。同一对客户/服务器之间的后续请求和响应可以通过这个连接发送。
+<img :src="$withBase('/images/nginx/gzip3.png')" alt="foo">
 
-![avatar](/images/nginx/gzip3.png)
 
 为了尽可能的提高 HTTP 性能，使用持久连接就显得尤为重要了。
 
@@ -176,7 +184,8 @@ Nginx在启用了GZip的情况下，不会等文件 GZip 完成再返回响应�
 
 ### 负载均衡
 什么是负载均衡
-![avatar](/images/nginx/fz.png)
+<img :src="$withBase('/images/nginx/fz.png')" alt="foo">
+
 如上面的图，前面是众多的服务窗口，下面有很多用户需要服务，我们需要一个工具或策略来帮助我们将如此多的用户分配到每个窗口，来达到资源的充分利用以及更少的排队时间。
 
 把前面的服务窗口想像成我们的后端服务器，而后面终端的人则是无数个客户端正在发起请求。负载均衡就是用来帮助我们将众多的客户端请求合理的分配到各个服务器，以达到服务端资源的充分利用和更少的请求时间。
@@ -203,7 +212,8 @@ server {
 上面的配置只是指定了nginx需要转发的服务端列表，并没有指定分配策略。
 
 #### nginx实现负载均衡的策略
-![avatar](/images/nginx/fz1.png)
+<img :src="$withBase('/images/nginx/fz1.png')" alt="foo">
+
 #### 轮询策略
 默认情况下采用的策略，将所有客户端请求轮询分配给服务端。这种策略是可以正常工作的，但是如果其中某一台服务器压力太大，出现延迟，会影响所有分配在这台服务器下的用户。
 ```js
@@ -213,7 +223,8 @@ upstream balanceServer {
     server 10.1.22.35:12345;
 }
 ```
-![avatar](/images/nginx/fz2.png)
+<img :src="$withBase('/images/nginx/fz2.png')" alt="foo">
+
 
 #### 最小连接数策略
 将请求优先分配给压力较小的服务器，它可以平衡每个队列的长度，并避免向压力大的服务器添加更多的请求。
@@ -225,7 +236,8 @@ upstream balanceServer {
     server 10.1.22.35:12345;
 }
 ```
-![avatar](/images/nginx/fz3.png)
+<img :src="$withBase('/images/nginx/fz3.png')" alt="foo">
+
 
 #### 最快响应时间策略
 
