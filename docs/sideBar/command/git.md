@@ -83,12 +83,20 @@ git branch | grep -v "master" | xargs git branch -D
 ```
 git merge --no-f -m "merge 的备注"  需要merge的分支名： merge分支提交备注
 ```
+
 ### 创建SSH Key 创建免登录的授权
 ```
 1.ssh-keygen -t rsa -C 769461729@qq.com（setting的中查找邮箱地址 邮箱不写）
    或者使用ssh-keygen -t rsa命令
 2.找到rsa.pub key,导入到gitlib中（执行代码会有key的地址，然后在gitlab中ssh key
 中粘贴入key）
+```
+
+### 提交文件夹到github（文件夹为空）
+问题原因：文件夹里有隐藏的.git文件和当前项目.git冲突（同一个仓库有多个项目）
+```
+ git rm -rf --cached '项目名称'
+
 ```
 ### 仓库迁移
 ```
