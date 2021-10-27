@@ -192,6 +192,7 @@ module.exports = {
         title: "项目",
         collapsable: true,
         children: [
+          { title: "setting+vscode", path: "/sideBar/project/problem" },
           { title: "setting+vscode", path: "/sideBar/project/setting" },
           { title: "工具", path: "/sideBar/project/until" },
           { title: "插件", path: "/sideBar/project/public" },
