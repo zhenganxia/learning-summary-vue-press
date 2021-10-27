@@ -175,7 +175,8 @@ module.exports = {
         title: "搭建流程",
         collapsable: true,
         children: [
-          { title: "vuePress+gitPage", path: "/sideBar/npmPublic/vuePress" }
+          { title: "vuePress+gitPage", path: "/sideBar/npmPublic/vuePress" },
+          { title: "ModuleFederation", path: "/sideBar/npmPublic/ModuleFederation" }
         ],
       },
       {
