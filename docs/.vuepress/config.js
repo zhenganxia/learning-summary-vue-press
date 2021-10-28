@@ -118,6 +118,8 @@ module.exports = {
         title: "算法",
         collapsable: true,
         children: [
+          {title: "数据结构",path: "/sideBar/algorithm/data"},
+          {title: "求和",path: "/sideBar/algorithm/sum"},
           { title: "排序", path: "/sideBar/algorithm/sort" },
           { title: "其他", path: "/sideBar/algorithm/others" }
         ],
