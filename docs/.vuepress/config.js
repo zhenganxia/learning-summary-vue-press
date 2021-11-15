@@ -68,6 +68,7 @@ module.exports = {
           { title: "linux", path: "/sideBar/command/linux" },
           { title: "submodule", path: "/sideBar/command/submodule" },
           { title: "markdown", path: "/sideBar/command/markdown" },
+          { title: "git报错", path: "/sideBar/command/gitError" },
         ],
       },
       {
