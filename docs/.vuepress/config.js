@@ -92,8 +92,8 @@ module.exports = {
         collapsable: true,
         children: [
           { title: "webpack", path: "/sideBar/performanceOptimization/webpack" },
-          { title: "其他", path: "/sideBar/performanceOptimization/others" },
           { title: "长列表优化", path: "/sideBar/performanceOptimization/list" },
+          { title: "其他", path: "/sideBar/performanceOptimization/others" },
           { title: "检测分析页面性能", path: "/sideBar/performanceOptimization/plugin" },
         ],
       },

@@ -1,26 +1,13 @@
-### 批量引入优化加载 required.context
-:::tip
-三个参数(需要引入文件夹地址，布尔值（是否需要引入文件夹下的子文件夹数据），需要引入的类型)
-:::
-可以批量引入某个文件下,不需要一个一个引入加载
-```js
-全局注册路由、动态路由
-实例1：引入pages文件夹下的（model1.index.vue，model2.index.vue）文件
-var r = required.context('./pages',true,/.vue/) // r为一个方法
-r.keys().forEach((name)=>{
-    // r.keys() => ['./model1.index.vue','./model2.index.vue']
-
-})
-
-```
-
-### 项目更小
+## 压缩
 :::tip
 资源文件下载html、css、js消耗时间最多
+loader:注册loader-对应的文件内容给到loader方法处理内容-方法return结果
+plugin:注册plugin-插件接收到webpack编译过程-监听某个生命周期-当编译到达某个生命周期时会自动的调用插件的监听
+tree-shaking：写在原型链上的方法无法处理，函数式编程可以处理
 :::
 
+### 压缩js、html、css
 ```js
-代码压缩：js、html、css
 webpack结构
 const MiniCssExtractPlugin  = require("mini-css-extract-plugin")
 const cssMinimizerWebpackPlugin = require("css-minimizer-webpack-plugin")
@@ -81,13 +68,20 @@ module.exports = {
     ]
 }
 ```
-:::tip
-loader:注册loader-对应的文件内容给到loader方法处理内容-方法return结果
-plugin:注册plugin-插件接收到webpack编译过程-监听某个生命周期-当编译到达某个生命周期时会自动的调用插件的监听
-:::
 
+### 压缩gzip
+可通过webpack或者nginx设置
 
+## 优化网络连接
+### 使用cdn的方式外部加载一些资源
+比如vue-router、axios等Vue的周边插件-在webpack.config.js里面，externals里面设置一些不必要打包的外部引用模块。然后在入门文件index.html里面通过cdn的方式去引入需要的插件。
+<img :src="$withBase('/images/webpackExtral1.png')" alt="foo">
+<img :src="$withBase('/images/webpackExtral2.png')" alt="foo">
 
-```js
-tree-shaking：写在原型链上的方法无法处理，函数式编程可以处理
-```
+## webpack其他设置
+### 减少map文件
+把productionSourceMap设置为false，不然最终打包过后会生成一些map文件，如果不关掉，生成环境是可以通过map去查看源码的，并且可以开启gzip压<br/>
+缩，使打包过后体积变小。
+
+### 函数式编程
+函数式编程利于webpack tree-shaking
