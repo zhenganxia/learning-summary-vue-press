@@ -46,6 +46,9 @@
 ### Markdown Preview Enhanced
 #### 预览markdown 文件
 
+### Code Spell Checker
+#### 检查单词拼写是否有问题
+
 ### Path Intellisense 1.4.2
  ```js
 代码寻址(.vscode/settings.json)
