@@ -69,6 +69,7 @@ module.exports = {
           { title: "submodule", path: "/sideBar/command/submodule" },
           { title: "markdown", path: "/sideBar/command/markdown" },
           { title: "nvm", path: "/sideBar/command/nvm" },
+          { title: "nrm", path: "/sideBar/command/nrm" },
           { title: "工具地址", path: "/sideBar/command/tool" },
           { title: "git报错", path: "/sideBar/command/gitError" },
         ],
