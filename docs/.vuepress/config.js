@@ -197,6 +197,14 @@ module.exports = {
         ],
       },
       {
+        title:'多媒体',
+        collapsable: true,
+        children:[
+          {title:"video", path: "/sideBar/media/video"},
+          {title:"audio", path: "/sideBar/media/audio"},
+        ]
+      },
+      {
         title: "项目",
         collapsable: true,
         children: [
